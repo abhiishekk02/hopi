@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday, My Love! ❤️</title>
+    <style>
+      :root {
+        --pink: #ffb6c1;
+        --heart: #ff1493;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      body {
+        margin: 0;
+        font-family: "Pacifico", cursive;
+        background: linear-gradient(135deg, #fff0f5 0%, #ffe4e1 100%);
+        text-align: center;
+        overflow-x: hidden;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      h1 {
+        color: var(--heart);
+        font-size: 4em;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        animation: bounce 2s infinite;
+      }
+
+      .polaroid {
+        background: white;
+        padding: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transform: rotate(-3deg);
+        margin: 20px;
+        display: inline-block;
+        transition: all 0.3s;
+      }
+
+      .polaroid:hover {
+        transform: rotate(2deg) scale(1.05);
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .gallery img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 10px;
+        transition: transform 0.3s;
+        cursor: pointer;
+      }
+
+      .gallery img:hover {
+        transform: scale(1.05);
+      }
+
+      .heart {
+        position: absolute;
+        color: var(--heart);
+        font-size: 24px;
+        animation: float 3s infinite;
+      }
+
+      .message {
+        background: white;
+        padding: 30px;
+        margin: 40px;
+        border-radius: 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        font-size: 1.2em;
+        line-height: 1.6;
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      button {
+        background: var(--heart);
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 30px;
+        font-size: 1.2em;
+        cursor: pointer;
+        transition: transform 0.3s;
+        margin: 20px;
+      }
+
+      button:hover {
+        transform: scale(1.1) rotate(3deg);
+      }
+
+      #confetti {
+        position: fixed;
+        pointer-events: none;
+      }
+    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="confetti"></div>
+
+    <div class="container">
+      <h1>Happy Birthday, My Sunshine! 🌸</h1>
+
+      <div class="polaroid">
+        <img
+          src="YOUR_PHOTO_URL"
+          alt="Us"
+          style="width: 300px; height: 400px"
+        />
+      </div>
+
+      <div class="message">
+        <p>To the most amazing girlfriend in the world,</p>
+        <p>
+          On your special day, I want you to know how much you mean to me. You
+          make every day brighter, every moment more special, and my life more
+          beautiful. Here's to another year of adventures together! 🎉
+        </p>
+        <p>Love you to the moon and back,</p>
+        <p>Your Gopi ❤️</p>
+      </div>
+
+      <button onclick="showLove()">Click for Surprise!</button>
+
+      <div class="gallery">
+        <img src="PHOTO1_URL" alt="Memory 1" />
+        <img src="PHOTO2_URL" alt="Memory 2" />
+        <img src="PHOTO3_URL" alt="Memory 3" />
+      </div>
+
+      <div id="loveCounter">
+        We've been in love for <span id="days">0</span> days!
+      </div>
+    </div>
+
+    <audio
+      id="birthdaySong"
+      src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+    ></audio>
+
+    <script>
+      // Confetti effect
+      function createHeart() {
+        const heart = document.createElement("div");
+        heart.innerHTML = "❤️";
+        heart.className = "heart";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+        document.getElementById("confetti").appendChild(heart);
+
+        setTimeout(() => heart.remove(), 5000);
+      }
+
+      // Love counter
+      const startDate = new Date("YOUR_START_DATE"); // Replace with your date
+      function updateCounter() {
+        const diff = new Date() - startDate;
+        document.getElementById("days").innerText = Math.floor(
+          diff / (1000 * 60 * 60 * 24)
+        );
+      }
+      setInterval(updateCounter, 1000);
+
+      // Surprise button
+      function showLove() {
+        document.getElementById("birthdaySong").play();
+        for (let i = 0; i < 50; i++) setTimeout(createHeart, i * 100);
+      }
+
+      // Initial hearts
+      setInterval(createHeart, 300);
+    </script>
+  </body>
+</html>
