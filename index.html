@@ -66,7 +66,7 @@
 
       .gallery img {
         width: 100%;
-        height: 300px;
+        height: 400px;
         object-fit: cover;
         border-radius: 10px;
         transition: transform 0.3s;
@@ -134,14 +134,10 @@
     <div id="confetti"></div>
 
     <div class="container">
-      <h1>Happy Birthday, My Sunshine! 🌸</h1>
+      <h1>Happy Birthday, My Everything! 🌸</h1>
 
       <div class="polaroid">
-        <img
-          src="YOUR_PHOTO_URL"
-          alt="Us"
-          style="width: 300px; height: 400px"
-        />
+        <img src="./Single.jpeg" alt="Us" style="width: 300px; height: 400px" />
       </div>
 
       <div class="message">
@@ -152,15 +148,16 @@
           beautiful. Here's to another year of adventures together! 🎉
         </p>
         <p>Love you to the moon and back,</p>
-        <p>Your Gopi ❤️</p>
+        <p>❤️</p>
       </div>
 
-      <button onclick="showLove()">Click for Surprise!</button>
+      <!-- <button onclick="showLove()">Click for Surprise!</button> -->
 
       <div class="gallery">
-        <img src="PHOTO1_URL" alt="Memory 1" />
-        <img src="PHOTO2_URL" alt="Memory 2" />
-        <img src="PHOTO3_URL" alt="Memory 3" />
+        <img src="./grp2.jpeg" alt="Memory 2" />
+        <img src="./grp1.jpeg" alt="Memory 1" />
+
+        <img src="./grp3.jpeg" alt="Memory 3" />
       </div>
 
       <div id="loveCounter">
@@ -168,10 +165,10 @@
       </div>
     </div>
 
-    <audio
+    <!-- <audio
       id="birthdaySong"
       src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
-    ></audio>
+    ></audio> -->
 
     <script>
       // Confetti effect
@@ -187,7 +184,7 @@
       }
 
       // Love counter
-      const startDate = new Date("YOUR_START_DATE"); // Replace with your date
+      const startDate = new Date("2024-08-25"); // Replace with your date
       function updateCounter() {
         const diff = new Date() - startDate;
         document.getElementById("days").innerText = Math.floor(
